@@ -43,6 +43,19 @@
 (require 'ffap)
 (ffap-bindings)
 
+;; make show-paren a bit smarter
+(defadvice show-paren-function
+  (after show-matching-paren-offscreen activate)
+  "If the matching paren is offscreen, show the matching line in the
+     echo area. Has no effect if the character before point is not of
+     the syntax class ')'."
+  (interactive)
+  (let* ((cb (char-before (point)))
+         (matching-text (and cb
+                             (char-equal (char-syntax cb) ?\) )
+                             (blink-matching-open))))
+    (when matching-text (message matching-text))))
+
 ;; My local definitions
 (require 'leo-lib)
 
@@ -100,6 +113,7 @@
    (quote
     (yasnippet zenburn-theme browse-kill-ring company company-c-headers company-shell company-web expand-region ggtags git-gutter-fringe magit-svn rainbow-mode markdown-mode+ yaml-mode tabbar scroll-restore magit auctex org)))
  '(reftex-plug-into-AUCTeX t)
+ '(savehist-mode t)
  '(show-paren-mode t)
  '(tab-width 2)
  '(text-scale-mode-step 1.1)
