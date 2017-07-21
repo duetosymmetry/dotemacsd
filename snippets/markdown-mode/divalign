@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: div align
+# key: divalign
+# --
+<div>
+\begin{align}
+\label{eq:$1}
+$0
+\end{align}
+</div>

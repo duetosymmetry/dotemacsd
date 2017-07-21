@@ -33,6 +33,9 @@
 ;; setup files ending in ".markdown" to open in markdown-mode
 (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
 
+;; add yasnippet to markdown mode
+(add-hook 'markdown-mode-hook #'yas-minor-mode)
+
 ;; Add my keybindings
 (load "key-bindings")
 
@@ -95,7 +98,7 @@
      ("gnu" . "https://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (zenburn-theme browse-kill-ring company company-c-headers company-shell company-web expand-region ggtags git-gutter-fringe magit-svn rainbow-mode markdown-mode+ yaml-mode tabbar scroll-restore magit auctex org)))
+    (yasnippet zenburn-theme browse-kill-ring company company-c-headers company-shell company-web expand-region ggtags git-gutter-fringe magit-svn rainbow-mode markdown-mode+ yaml-mode tabbar scroll-restore magit auctex org)))
  '(reftex-plug-into-AUCTeX t)
  '(show-paren-mode t)
  '(tab-width 2)
