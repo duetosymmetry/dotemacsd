@@ -26,13 +26,6 @@
 (server-start)
 (put 'downcase-region 'disabled nil)
 
-;; From https://github.com/yoshiki/yaml-mode
-(require 'yaml-mode)
-(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-
-;; setup files ending in ".markdown" to open in markdown-mode
-(add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
-
 ;; add yasnippet to markdown mode
 (add-hook 'markdown-mode-hook #'yas-minor-mode)
 
