@@ -58,6 +58,9 @@
   (set-variable 'insert-directory-program "gls")
 )
 
+;; Use default Apple font for emoji
+(emoji-fontset-enable "Apple Color Emoji")
+
 ;; Use ggtags
 ;; (add-hook 'c-mode-common-hook
 ;;           (lambda ()
@@ -104,7 +107,7 @@
      ("gnu" . "https://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (yasnippet zenburn-theme browse-kill-ring company company-c-headers company-shell company-web expand-region ggtags git-gutter-fringe magit-svn rainbow-mode markdown-mode+ yaml-mode tabbar scroll-restore magit auctex org)))
+    (emoji-fontset yasnippet zenburn-theme browse-kill-ring company company-c-headers company-shell company-web expand-region ggtags git-gutter-fringe magit-svn rainbow-mode markdown-mode+ yaml-mode tabbar scroll-restore magit auctex org)))
  '(reftex-plug-into-AUCTeX t)
  '(savehist-mode t)
  '(show-paren-mode t)
