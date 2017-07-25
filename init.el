@@ -10,20 +10,7 @@
 ;(setq org-refile-use-outline-path 't)
 ;(setq org-mobile-directory "~/Dropbox/MobileOrg")
 
-;; (require 'package) ;; You might already have this line
-;; (add-to-list 'package-archives
-;;              '("melpa" . "http://melpa.org/packages/"))
-;; (when (< emacs-major-version 24)
-;;   ;; For important compatibility libraries like cl-lib
-;;   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
-;; (package-initialize) ;; You might already have this line
-
-;; To save and restore the previous desktop
-(setq desktop-dirname "~/.emacs.d/")
-(desktop-save-mode 1)
-
-;; I might need this??
-(server-start)
+;; I allow myself to use this 'confusing' command
 (put 'downcase-region 'disabled nil)
 
 ;; add yasnippet to markdown mode
@@ -58,9 +45,6 @@
   (set-variable 'insert-directory-program "gls")
 )
 
-;; Use default Apple font for emoji
-(emoji-fontset-enable "Apple Color Emoji")
-
 ;; Use ggtags
 ;; (add-hook 'c-mode-common-hook
 ;;           (lambda ()
@@ -88,6 +72,7 @@
     ((output-dvi "open")
      (output-pdf "Skim")
      (output-html "open"))))
+ '(custom-enabled-themes (quote (zenburn)))
  '(custom-safe-themes
    (quote
     ("67e998c3c23fe24ed0fb92b9de75011b92f35d3e89344157ae0d544d50a63a72" default)))
@@ -120,3 +105,19 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:height 130 :family "Inconsolata")))))
+
+(require 'package)
+(package-initialize)
+
+(load-theme 'zenburn)
+
+;; Use default Apple font for emoji
+(emoji-fontset-enable "Apple Color Emoji")
+
+;; To save and restore the previous desktop
+
+(setq desktop-dirname "~/.emacs.d/")
+(desktop-save-mode 1)
+
+;; Always Be Serving
+(server-start)
