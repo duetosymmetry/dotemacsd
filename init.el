@@ -75,6 +75,8 @@
  '(custom-safe-themes
    (quote
     ("67e998c3c23fe24ed0fb92b9de75011b92f35d3e89344157ae0d544d50a63a72" default)))
+ '(desktop-restore-in-current-display nil)
+ '(desktop-save-mode t)
  '(ffap-require-prefix t)
  '(global-font-lock-mode t)
  '(indent-tabs-mode nil)
@@ -112,11 +114,6 @@
 
 ;; Use default Apple font for emoji
 (emoji-fontset-enable "Apple Color Emoji")
-
-;; To save and restore the previous desktop
-
-(setq desktop-dirname "~/.emacs.d/")
-(desktop-save-mode 1)
 
 ;; Always Be Serving
 (server-start)
