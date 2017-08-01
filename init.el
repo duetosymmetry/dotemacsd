@@ -93,13 +93,14 @@
      ("gnu" . "https://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (emoji-fontset yasnippet zenburn-theme browse-kill-ring company company-c-headers company-shell company-web expand-region ggtags git-gutter-fringe magit-svn rainbow-mode markdown-mode+ yaml-mode tabbar scroll-restore magit auctex org)))
+    (multiple-cursors emoji-fontset yasnippet zenburn-theme browse-kill-ring company company-c-headers company-shell company-web expand-region ggtags git-gutter-fringe magit-svn rainbow-mode markdown-mode+ yaml-mode tabbar scroll-restore magit auctex org)))
  '(reftex-plug-into-AUCTeX t)
  '(savehist-mode t)
  '(show-paren-mode t)
  '(tab-width 2)
  '(text-scale-mode-step 1.1)
- '(tool-bar-mode nil))
+ '(tool-bar-mode nil)
+ '(truncate-lines t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
