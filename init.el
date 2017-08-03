@@ -71,6 +71,7 @@
     ((output-dvi "open")
      (output-pdf "Skim")
      (output-html "open"))))
+ '(column-number-mode t)
  '(custom-enabled-themes (quote (zenburn)))
  '(custom-safe-themes
    (quote
