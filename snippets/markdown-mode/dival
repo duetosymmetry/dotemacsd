@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: div align
-# key: divalign
+# key: dival
 # --
 <div>
 \begin{align}
