@@ -31,17 +31,29 @@
 (require 'biblio-core)
 (require 'biblio-doi)
 (require 'timezone)
+(require 'browse-url)
 
 (defgroup biblio-inspire nil
   "INSPIRE support in biblio.el"
   :group 'biblio)
 
+;; First, a custom action
+
+(defun biblio-inspire-visit-bibtex--action (record)
+  "Visit an INSPIRE record's bibtex page.
+RECORD is a formatted record as expected by `biblio-insert-result'."
+  (let-alist record
+    (if .is-inspire
+        (let* ((burl (concat .url "/export/hx")))
+          (browse-url-emacs burl))
+      (user-error "This record did not come from INSPIRE"))))
+
+;; back to the usual stuff
+
 (defcustom biblio-inspire-bibtex-header "biblio-inspire"
   "Which header to use for BibTeX entries generated from INSPIRE metadata."
   :group 'biblio
   :type 'string)
-
-;;(defun biblio-inspire--fetch-real-bibtex (metadata) ...)
 
 (defun biblio-inspire--build-bibtex-1 (metadata)
   "Create an unformated BibTeX record for METADATA."
@@ -101,6 +113,7 @@ primaryClass = {%s}}"
             (cons 'category (seq-map #'biblio-inspire--get-subject entry))
             (cons 'type "article")
             (cons 'url (cadr .dc:source))
+            (cons 'is-inspire 't)
             (cons 'direct-url (cadr .dc:identifier))))))
 
 (defun biblio-inspire--entryp (entry)
@@ -134,6 +147,15 @@ COMMAND, ARG, MORE: See `biblio-backends'."
 
 ;;;###autoload
 (add-hook 'biblio-init-hook #'biblio-inspire-backend)
+
+;;;###autoload
+(defun biblio-inspire--register-action ()
+  "Add visit INSPIRE record's bibtex to list of `biblio-selection-mode' actions."
+  (add-to-list 'biblio-selection-mode-actions-alist
+               '("Visit INSPIRE record's bibtex" . biblio-inspire-visit-bibtex--action)))
+
+;;;###autoload
+(add-hook 'biblio-selection-mode-hook #'biblio-inspire--register-action)
 
 ;;;###autoload
 (defun biblio-inspire-lookup (&optional query)
