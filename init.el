@@ -56,7 +56,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(LaTeX-electric-left-right-brace t)
- '(LaTeX-mode-hook (quote (LaTeX-math-mode turn-on-reftex auto-fill-mode)))
+ '(LaTeX-mode-hook
+   (quote
+    (LaTeX-math-mode turn-on-reftex auto-fill-mode latex-extra-mode)))
  '(TeX-PDF-mode t)
  '(TeX-electric-escape t)
  '(TeX-electric-math (quote ("$" . "$")))
