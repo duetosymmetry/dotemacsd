@@ -104,6 +104,7 @@
  '(text-scale-mode-step 1.1)
  '(tool-bar-mode nil)
  '(truncate-lines t)
+ '(visual-line-fringe-indicators (quote (left-curly-arrow right-curly-arrow)))
  '(which-key-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
