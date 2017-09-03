@@ -58,7 +58,7 @@
  '(LaTeX-electric-left-right-brace t)
  '(LaTeX-mode-hook
    (quote
-    (LaTeX-math-mode turn-on-reftex auto-fill-mode latex-extra-mode)))
+    (LaTeX-math-mode turn-on-reftex auto-fill-mode latex-extra-mode flyspell-mode)))
  '(TeX-PDF-mode t)
  '(TeX-electric-escape t)
  '(TeX-electric-math (quote ("$" . "$")))
