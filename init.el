@@ -80,6 +80,7 @@
     ("67e998c3c23fe24ed0fb92b9de75011b92f35d3e89344157ae0d544d50a63a72" default)))
  '(desktop-restore-in-current-display nil)
  '(desktop-save-mode t)
+ '(diredp-hide-details-initially-flag nil)
  '(ffap-require-prefix t)
  '(global-font-lock-mode t)
  '(indent-tabs-mode nil)
