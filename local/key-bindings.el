@@ -17,3 +17,7 @@
 (global-set-key (kbd "s-=") 'text-scale-increase)
 (global-set-key (kbd "s--") 'text-scale-decrease)
 (global-set-key (kbd "s-0") (lambda () (interactive) (text-scale-set 0)))
+
+;; Top/bottom of buffer in a mac fashion
+(global-set-key (kbd "<s-up>")   'beginning-of-buffer)
+(global-set-key (kbd "<s-down>") 'end-of-buffer)
