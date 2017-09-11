@@ -13,8 +13,9 @@
 ;; I allow myself to use this 'confusing' command
 (put 'downcase-region 'disabled nil)
 
-;; add yasnippet to markdown mode
+;; add yasnippet and auto-fille-mode to markdown mode
 (add-hook 'markdown-mode-hook #'yas-minor-mode)
+(add-hook 'markdown-mode-hook #'auto-fill-mode)
 
 ;; Add my keybindings
 (load "key-bindings")
