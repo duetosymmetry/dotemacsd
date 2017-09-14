@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: polink
+# key: polink
+# --
+[`yas-selected-text`$0]({{ site.url }}{% post_url ${1:/subdir/YYYY-MM-DD-file} %})
