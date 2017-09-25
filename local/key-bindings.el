@@ -7,6 +7,9 @@
 ;; (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
 
+;; Use ibuffer
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
 ;; Enter magit-status
 (global-set-key (kbd "C-x g") 'magit-status)
 
