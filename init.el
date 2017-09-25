@@ -85,6 +85,7 @@
  '(diredp-hide-details-initially-flag nil)
  '(ffap-require-prefix t)
  '(global-font-lock-mode t)
+ '(ibuffer-expert t)
  '(indent-tabs-mode nil)
  '(ispell-program-name "aspell")
  '(org-capture-templates
