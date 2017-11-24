@@ -89,6 +89,7 @@
  '(ibuffer-expert t)
  '(indent-tabs-mode nil)
  '(ispell-program-name "aspell")
+ '(js-indent-level 2)
  '(org-capture-templates
    (quote
     (("n" "Note" entry
