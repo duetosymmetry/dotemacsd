@@ -12,6 +12,7 @@
 
 ;; I allow myself to use these 'confusing' command
 (put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
 
 ;; add yasnippet and auto-fille-mode to markdown mode
