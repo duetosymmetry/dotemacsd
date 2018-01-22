@@ -90,6 +90,7 @@
  '(indent-tabs-mode nil)
  '(ispell-program-name "aspell")
  '(js-indent-level 2)
+ '(mouse-wheel-scroll-amount (quote (2 ((shift) . 1) ((control)))))
  '(org-capture-templates
    (quote
     (("n" "Note" entry
