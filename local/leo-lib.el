@@ -27,4 +27,20 @@
   (interactive)
   (buffer-file-git-diff-regions-apply 'whitespace-cleanup-region))
 
+
+;; See https://glyph.twistedmatrix.com/2015/11/editor-malware.html
+;; about setting up TLS
+(let ((trustfile
+       (replace-regexp-in-string
+        "\\\\" "/"
+        (replace-regexp-in-string
+         "\n" ""
+         (shell-command-to-string "python -m certifi")))))
+  (setq tls-program
+        (list
+         (format "gnutls-cli%s --x509cafile %s -p %%p %%h"
+                 (if (eq window-system 'w32) ".exe" "") trustfile)))
+  (setq gnutls-verify-error t)
+  (setq gnutls-trustfiles (list trustfile)))
+
 (provide 'leo-lib)

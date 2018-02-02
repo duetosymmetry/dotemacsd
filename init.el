@@ -109,6 +109,7 @@
  '(show-paren-mode t)
  '(tab-width 2)
  '(text-scale-mode-step 1.1)
+ '(tls-checktrust t)
  '(tool-bar-mode nil)
  '(truncate-lines t)
  '(visual-line-fringe-indicators (quote (left-curly-arrow right-curly-arrow)))
