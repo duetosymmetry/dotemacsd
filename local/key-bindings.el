@@ -16,6 +16,9 @@
 ;; Start org-capturing
 (global-set-key (kbd "C-c c") 'org-capture)
 
+(with-eval-after-load 'org
+  (bind-key "C-c i" 'org-insert-item))
+
 ;; Zooming in a mac fashion
 (global-set-key (kbd "s-=") 'text-scale-increase)
 (global-set-key (kbd "s--") 'text-scale-decrease)

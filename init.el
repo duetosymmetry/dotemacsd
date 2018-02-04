@@ -80,7 +80,7 @@
  '(custom-enabled-themes (quote (zenburn)))
  '(custom-safe-themes
    (quote
-    ("5e52ce58f51827619d27131be3e3936593c9c7f9f9f9d6b33227be6331bf9881" "67e998c3c23fe24ed0fb92b9de75011b92f35d3e89344157ae0d544d50a63a72" default)))
+    ("599f1561d84229e02807c952919cd9b0fbaa97ace123851df84806b067666332" "5e52ce58f51827619d27131be3e3936593c9c7f9f9f9d6b33227be6331bf9881" "67e998c3c23fe24ed0fb92b9de75011b92f35d3e89344157ae0d544d50a63a72" default)))
  '(desktop-restore-in-current-display nil)
  '(desktop-save-mode t)
  '(diredp-hide-details-initially-flag nil)
@@ -103,7 +103,7 @@
      ("gnu" . "https://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (wc-mode dired+ latex-extra biblio which-key unfill smooth-scroll multiple-cursors emoji-fontset yasnippet zenburn-theme browse-kill-ring company company-c-headers company-shell company-web expand-region ggtags git-gutter-fringe magit-svn rainbow-mode markdown-mode+ yaml-mode tabbar scroll-restore magit auctex org)))
+    (bind-key wc-mode dired+ latex-extra biblio which-key unfill smooth-scroll multiple-cursors emoji-fontset yasnippet zenburn-theme browse-kill-ring company company-c-headers company-shell company-web expand-region ggtags git-gutter-fringe magit-svn rainbow-mode markdown-mode+ yaml-mode tabbar scroll-restore magit auctex org)))
  '(reftex-plug-into-AUCTeX t)
  '(savehist-mode t)
  '(show-paren-mode t)
