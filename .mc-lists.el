@@ -6,6 +6,7 @@
         c-electric-paren
         c-indent-line-or-region
         kill-region
+        latex/beginning-of-line
         org-beginning-of-line
         org-end-of-line
         org-force-self-insert
