@@ -19,13 +19,6 @@
 (add-hook 'markdown-mode-hook #'yas-minor-mode)
 (add-hook 'markdown-mode-hook #'auto-fill-mode)
 
-;; Add my keybindings
-(load "key-bindings")
-
-;; This is kind of key-binding related
-(require 'ffap)
-(ffap-bindings)
-
 ;; make show-paren a bit smarter
 (defadvice show-paren-function
   (after show-matching-paren-offscreen activate)
@@ -125,6 +118,13 @@
 (package-initialize)
 
 (load-theme 'zenburn)
+
+;; Add my keybindings
+(load "key-bindings")
+
+;; This is kind of key-binding related
+(require 'ffap)
+(ffap-bindings)
 
 ;; Use default Apple font for emoji
 (emoji-fontset-enable "Apple Color Emoji")
