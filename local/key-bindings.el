@@ -27,3 +27,7 @@
 ;; Top/bottom of buffer in a mac fashion
 (bind-key "<s-up>"   'beginning-of-buffer)
 (bind-key "<s-down>" 'end-of-buffer)
+
+;; Generate mouse-2 commands via Cmd-click
+;; Taken from https://emacs.stackexchange.com/a/20948/16482
+(define-key key-translation-map (kbd "<s-mouse-1>") (kbd "<mouse-2>"))
