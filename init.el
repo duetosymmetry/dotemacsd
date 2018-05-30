@@ -63,7 +63,7 @@
  '(TeX-source-correlate-mode t)
  '(TeX-view-program-list
    (quote
-    (("Skim" "/Applications/Skim.app/Contents/SharedSupport/displayline -b %n %o %b"))))
+    (("Skim" "/Applications/Skim.app/Contents/SharedSupport/displayline %n %o %b"))))
  '(TeX-view-program-selection
    (quote
     ((output-dvi "open")
