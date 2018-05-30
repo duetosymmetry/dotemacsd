@@ -87,7 +87,9 @@
  '(ispell-program-name "aspell")
  '(js-indent-level 2)
  '(magit-diff-refine-hunk (quote all))
+ '(mouse-wheel-flip-direction t)
  '(mouse-wheel-scroll-amount (quote (2 ((shift) . 1) ((control)))))
+ '(mouse-wheel-tilt-scroll t)
  '(org-capture-templates
    (quote
     (("n" "Note" entry
