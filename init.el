@@ -78,6 +78,7 @@
  '(desktop-save-mode t)
  '(diredp-hide-details-initially-flag nil)
  '(display-line-numbers (quote visual))
+ '(display-line-numbers-type (quote relative))
  '(ffap-require-prefix t)
  '(global-display-line-numbers-mode t)
  '(global-font-lock-mode t)
