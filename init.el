@@ -83,6 +83,7 @@
  '(indent-tabs-mode nil)
  '(ispell-program-name "aspell")
  '(js-indent-level 2)
+ '(magit-diff-refine-hunk (quote all))
  '(mouse-wheel-scroll-amount (quote (2 ((shift) . 1) ((control)))))
  '(org-capture-templates
    (quote
