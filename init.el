@@ -73,7 +73,7 @@
  '(custom-enabled-themes (quote (zenburn)))
  '(custom-safe-themes
    (quote
-    ("e11569fd7e31321a33358ee4b232c2d3cf05caccd90f896e1df6cab228191109" "599f1561d84229e02807c952919cd9b0fbaa97ace123851df84806b067666332" "5e52ce58f51827619d27131be3e3936593c9c7f9f9f9d6b33227be6331bf9881" "67e998c3c23fe24ed0fb92b9de75011b92f35d3e89344157ae0d544d50a63a72" default)))
+    ("190a9882bef28d7e944aa610aa68fe1ee34ecea6127239178c7ac848754992df" "e11569fd7e31321a33358ee4b232c2d3cf05caccd90f896e1df6cab228191109" "599f1561d84229e02807c952919cd9b0fbaa97ace123851df84806b067666332" "5e52ce58f51827619d27131be3e3936593c9c7f9f9f9d6b33227be6331bf9881" "67e998c3c23fe24ed0fb92b9de75011b92f35d3e89344157ae0d544d50a63a72" default)))
  '(desktop-restore-in-current-display nil)
  '(desktop-save-mode t)
  '(diredp-hide-details-initially-flag nil)
@@ -84,6 +84,9 @@
  '(global-font-lock-mode t)
  '(global-visual-line-mode t)
  '(ibuffer-expert t)
+ '(ido-enable-flex-matching t)
+ '(ido-use-filename-at-point (quote guess))
+ '(ido-use-url-at-point t)
  '(indent-tabs-mode nil)
  '(ispell-program-name "aspell")
  '(js-indent-level 2)
@@ -103,8 +106,9 @@
      ("gnu" . "https://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (bind-key wc-mode dired+ latex-extra biblio which-key unfill smooth-scroll multiple-cursors emoji-fontset yasnippet zenburn-theme browse-kill-ring company company-c-headers company-shell company-web expand-region ggtags git-gutter-fringe magit-svn rainbow-mode markdown-mode+ yaml-mode tabbar scroll-restore magit auctex org)))
+    (highlight-indent-guides pcre2el visual-regexp-steroids nyan-mode bind-key wc-mode dired+ latex-extra biblio which-key unfill smooth-scroll multiple-cursors emoji-fontset yasnippet zenburn-theme browse-kill-ring company company-c-headers company-shell company-web expand-region ggtags git-gutter-fringe magit-svn rainbow-mode markdown-mode+ yaml-mode tabbar scroll-restore magit auctex org)))
  '(reftex-plug-into-AUCTeX t)
+ '(safe-local-variable-values (quote ((TeX-PDF-mode . true))))
  '(savehist-mode t)
  '(show-paren-mode t)
  '(tab-width 2)
@@ -129,9 +133,8 @@
 ;; Add my keybindings
 (load "key-bindings")
 
-;; This is kind of key-binding related
-(require 'ffap)
-(ffap-bindings)
+;; Use ido
+(ido-mode 1)
 
 ;; Use default Apple font for emoji
 (emoji-fontset-enable "Apple Color Emoji")
