@@ -84,6 +84,7 @@
  '(global-font-lock-mode t)
  '(global-visual-line-mode t)
  '(ibuffer-expert t)
+ '(ido-default-buffer-method (quote selected-window))
  '(ido-enable-flex-matching t)
  '(ido-use-filename-at-point (quote guess))
  '(ido-use-url-at-point t)
@@ -127,6 +128,9 @@
 
 (require 'package)
 (package-initialize)
+
+;; See https://github.com/d12frosted/homebrew-emacs-plus/issues/55
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . nil))
 
 (load-theme 'zenburn)
 
