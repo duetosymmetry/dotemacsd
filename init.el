@@ -73,7 +73,7 @@
  '(custom-enabled-themes (quote (zenburn)))
  '(custom-safe-themes
    (quote
-    ("190a9882bef28d7e944aa610aa68fe1ee34ecea6127239178c7ac848754992df" "e11569fd7e31321a33358ee4b232c2d3cf05caccd90f896e1df6cab228191109" "599f1561d84229e02807c952919cd9b0fbaa97ace123851df84806b067666332" "5e52ce58f51827619d27131be3e3936593c9c7f9f9f9d6b33227be6331bf9881" "67e998c3c23fe24ed0fb92b9de75011b92f35d3e89344157ae0d544d50a63a72" default)))
+    ("0c32e4f0789f567a560be625f239ee9ec651e524e46a4708eb4aba3b9cdc89c5" "190a9882bef28d7e944aa610aa68fe1ee34ecea6127239178c7ac848754992df" "e11569fd7e31321a33358ee4b232c2d3cf05caccd90f896e1df6cab228191109" "599f1561d84229e02807c952919cd9b0fbaa97ace123851df84806b067666332" "5e52ce58f51827619d27131be3e3936593c9c7f9f9f9d6b33227be6331bf9881" "67e998c3c23fe24ed0fb92b9de75011b92f35d3e89344157ae0d544d50a63a72" default)))
  '(desktop-restore-in-current-display nil)
  '(desktop-save-mode t)
  '(diredp-hide-details-initially-flag nil)
@@ -104,6 +104,7 @@
    (quote
     (("melpa-stable" . "https://stable.melpa.org/packages/")
      ("melpa" . "https://melpa.org/packages/")
+     ("org" . "https://orgmode.org/elpa/")
      ("gnu" . "https://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
