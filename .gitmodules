@@ -1,0 +1,3 @@
+[submodule "local/bibretrieve"]
+	path = local/bibretrieve
+	url = git@github.com:duetosymmetry/bibretrieve.git

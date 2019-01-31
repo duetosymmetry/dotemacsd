@@ -34,6 +34,9 @@
 ;; My local definitions
 (require 'leo-lib)
 
+(add-to-list 'load-path "~/.emacs.d/local/bibretrieve/")
+(require 'bibretrieve)
+
 ;; I'm on Darwin (Mac OS X), so I have to install gnu coreutils and
 ;; use "gls" instead of "ls" for dired
 (when (eq system-type 'darwin)
