@@ -163,7 +163,5 @@
 ;; Use default Apple font for emoji
 (emoji-fontset-enable "Apple Color Emoji")
 
-(require 'biblio-inspire)
-
 ;; Always Be Serving
 (server-start)
