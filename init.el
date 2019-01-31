@@ -55,6 +55,22 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(LaTeX-electric-left-right-brace t)
+ '(LaTeX-indent-environment-list
+   (quote
+    (("verbatim" current-indentation)
+     ("verbatim*" current-indentation)
+     ("tabular" LaTeX-indent-tabular)
+     ("tabular*" LaTeX-indent-tabular)
+     ("align")
+     ("align*")
+     ("array" LaTeX-indent-tabular)
+     ("eqnarray" LaTeX-indent-tabular)
+     ("eqnarray*" LaTeX-indent-tabular)
+     ("displaymath")
+     ("equation")
+     ("equation*")
+     ("picture")
+     ("tabbing"))))
  '(LaTeX-mode-hook
    (quote
     (LaTeX-math-mode turn-on-reftex auto-fill-mode latex-extra-mode flyspell-mode)))
