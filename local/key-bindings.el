@@ -30,4 +30,9 @@
 
 ;; Generate mouse-2 commands via Cmd-click
 ;; Taken from https://emacs.stackexchange.com/a/20948/16482
-(define-key key-translation-map (kbd "<s-mouse-1>") (kbd "<mouse-2>"))
+;; (define-key key-translation-map (kbd "<s-mouse-1>") (kbd "<mouse-2>"))
+
+(eval-after-load "flyspell"
+    '(progn
+       (define-key flyspell-mouse-map [down-mouse-3] #'flyspell-correct-word)
+       (define-key flyspell-mouse-map [mouse-3] #'undefined)))
