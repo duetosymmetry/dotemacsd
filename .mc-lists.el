@@ -3,8 +3,13 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        TeX-insert-backslash
+        beginning-of-visual-line
         c-electric-paren
         c-indent-line-or-region
+        coffee-dedent-line-backspace
+        end-of-visual-line
+        indent-for-tab-command
         kill-region
         latex/beginning-of-line
         org-beginning-of-line
