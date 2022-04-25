@@ -38,6 +38,7 @@
      '("pd" 0)
      '("nn" 0)
      '("cd" 0)
+     '("avg" t)
      '("rcurs" 0)
      '("brcurs" 0)
      '("hrcurs" 0)
