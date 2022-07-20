@@ -98,6 +98,7 @@
  '(diredp-hide-details-initially-flag nil)
  '(display-line-numbers 'visual)
  '(display-line-numbers-type 'relative)
+ '(epg-gpg-program "gpg")
  '(fci-rule-color "#383838")
  '(ffap-require-prefix t)
  '(global-display-line-numbers-mode t)
@@ -128,7 +129,7 @@
      ("org" . "https://orgmode.org/elpa/")
      ("gnu" . "https://elpa.gnu.org/packages/")))
  '(package-selected-packages
-   '(lsp-mode lsp-ui forge diff-hl coffee-mode json-mode highlight-indent-guides pcre2el visual-regexp-steroids nyan-mode bind-key wc-mode dired+ latex-extra biblio which-key unfill smooth-scroll multiple-cursors emoji-fontset yasnippet zenburn-theme browse-kill-ring company company-c-headers company-shell company-web expand-region ggtags git-gutter-fringe magit-svn rainbow-mode markdown-mode+ yaml-mode tabbar scroll-restore magit auctex org))
+   '(lsp-pyright lsp-mode lsp-ui forge diff-hl coffee-mode json-mode highlight-indent-guides pcre2el visual-regexp-steroids nyan-mode bind-key wc-mode dired+ latex-extra biblio which-key unfill smooth-scroll multiple-cursors emoji-fontset yasnippet zenburn-theme browse-kill-ring company company-c-headers company-shell company-web expand-region ggtags git-gutter-fringe magit-svn rainbow-mode markdown-mode+ yaml-mode tabbar scroll-restore magit auctex org))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(reftex-plug-into-AUCTeX t)
  '(safe-local-variable-values '((TeX-PDF-mode . true)))
@@ -192,6 +193,12 @@
 ;; Use forge when using magit
 (with-eval-after-load 'magit
   (require 'forge))
+
+(use-package lsp-pyright
+  :ensure t
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp))))  ; or lsp-deferred
 
 ;; Always Be Serving
 (server-start)
