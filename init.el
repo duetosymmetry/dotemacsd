@@ -129,7 +129,7 @@
      ("org" . "https://orgmode.org/elpa/")
      ("gnu" . "https://elpa.gnu.org/packages/")))
  '(package-selected-packages
-   '(lsp-pyright lsp-mode lsp-ui forge diff-hl coffee-mode json-mode highlight-indent-guides pcre2el visual-regexp-steroids nyan-mode bind-key wc-mode dired+ latex-extra biblio which-key unfill smooth-scroll multiple-cursors emoji-fontset yasnippet zenburn-theme browse-kill-ring company company-c-headers company-shell company-web expand-region ggtags git-gutter-fringe magit-svn rainbow-mode markdown-mode+ yaml-mode tabbar scroll-restore magit auctex org))
+   '(use-package lsp-pyright lsp-mode lsp-ui forge diff-hl coffee-mode json-mode highlight-indent-guides pcre2el visual-regexp-steroids nyan-mode bind-key wc-mode dired+ latex-extra biblio which-key unfill smooth-scroll multiple-cursors emoji-fontset yasnippet zenburn-theme browse-kill-ring company company-c-headers company-shell company-web expand-region ggtags git-gutter-fringe magit-svn rainbow-mode markdown-mode+ yaml-mode tabbar scroll-restore magit auctex org))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(reftex-plug-into-AUCTeX t)
  '(safe-local-variable-values '((TeX-PDF-mode . true)))
