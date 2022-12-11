@@ -33,6 +33,8 @@
      '("pssetup" (TeX-arg-key-val LaTeX-leops-package-options-list))
      '("showsolutions" 0)
      '("hidesolutions" 0)
+     '("ifsolutions" t)
+     '("ifnotsolutions" t)
      '("makeheader" 0)
      '("bs" t)
      '("pd" 0)
@@ -44,6 +46,8 @@
      '("hrcurs" 0)
      '("diag" 0)
      '("itemrange" t))
+    (LaTeX-add-environments
+     '("solution" ["Label (default is 'Solution:')"]))
     )))
 
 ;;; leops.el ends here.
