@@ -71,7 +71,7 @@
      ("picture")
      ("tabbing")))
  '(LaTeX-mode-hook
-   '(preview-mode-setup LaTeX-math-mode turn-on-reftex auto-fill-mode latex-extra-mode flyspell-mode))
+   '(LaTeX-math-mode turn-on-reftex auto-fill-mode latex-extra-mode flyspell-mode))
  '(TeX-PDF-mode t)
  '(TeX-electric-escape t)
  '(TeX-electric-math '("$" . "$"))
