@@ -45,6 +45,8 @@
      '("brcurs" 0)
      '("hrcurs" 0)
      '("diag" 0)
+     '("sign" 0)
+     '("Tr" 0)
      '("itemrange" t))
     (LaTeX-add-environments
      '("solution" ["Label (default is 'Solution:')"]))
