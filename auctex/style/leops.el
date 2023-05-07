@@ -28,7 +28,7 @@
                          "amsfonts" "amsthm" "xcolor" "tabularx"
                          "fontenc" "inputenc" "enumitem" "fancyhdr"
                          "hyperref" "graphicx" "bm" "verbatim"
-                         "caption")
+                         "caption" "mdframed" "tikz")
     (TeX-add-symbols
      '("pssetup" (TeX-arg-key-val LaTeX-leops-package-options-list))
      '("showsolutions" 0)
