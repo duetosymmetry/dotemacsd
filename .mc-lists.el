@@ -3,14 +3,17 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        LaTeX-insert-left-brace
         TeX-insert-backslash
         beginning-of-visual-line
         c-electric-paren
+        c-electric-star
         c-indent-line-or-region
         coffee-dedent-line-backspace
         end-of-visual-line
         indent-for-tab-command
         kill-region
+        kill-visual-line
         latex/beginning-of-line
         org-beginning-of-line
         org-end-of-line
