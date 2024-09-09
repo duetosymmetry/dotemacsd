@@ -19,18 +19,6 @@
 (add-hook 'markdown-mode-hook #'yas-minor-mode)
 (add-hook 'markdown-mode-hook #'auto-fill-mode)
 
-;; make show-paren a bit smarter
-(defadvice show-paren-function
-  (after show-matching-paren-offscreen activate)
-  "If the matching paren is offscreen, show the matching line in the
-     echo area. Has no effect if the character before point is not of
-     the syntax class ')'."
-  (interactive)
-  (let* ((cb (char-before (point))))
-         (and cb
-              (char-equal (char-syntax cb) ?\) )
-              (blink-matching-open))))
-
 ;; My local definitions
 (require 'leo-lib)
 
