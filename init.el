@@ -59,7 +59,7 @@
  ;; If there is more than one, they won't work right.
  '(LaTeX-electric-left-right-brace t)
  '(LaTeX-mode-hook
-   '(LaTeX-math-mode turn-on-reftex auto-fill-mode latex-extra-mode flyspell-mode))
+   '(LaTeX-math-mode turn-on-reftex turn-on-auto-fill latex-extra-mode flyspell-mode))
  '(TeX-PDF-mode t)
  '(TeX-electric-escape t)
  '(TeX-electric-math '("$" . "$"))
