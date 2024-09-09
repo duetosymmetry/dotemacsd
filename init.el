@@ -34,6 +34,9 @@
 ;; My local definitions
 (require 'leo-lib)
 
+;; I now put dired+.el in local
+(require 'dired+)
+
 (add-to-list 'load-path "~/.emacs.d/local/bibretrieve/")
 (require 'bibretrieve)
 
