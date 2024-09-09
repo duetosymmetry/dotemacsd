@@ -55,4 +55,27 @@
               (char-equal (char-syntax cb) ?\) )
               (blink-matching-open))))
 
+;; make auto-fill-mode ignore certain LaTeX envs
+(defvar my-LaTeX-no-autofill-environments
+  '("equation" "equation*" "eqnarray" "eqnarray*" "align" "align*"
+    "gather" "gather*" "aligned" "alignat" "alignat*" "multline" "multline*"
+    "flalign" "flalign*" "split"
+    "tabular" "tabular*" "tabularx")
+  "A list of LaTeX environment names in which `auto-fill-mode' should be inhibited.")
+
+(defun my-LaTeX-auto-fill-advice ()
+  "Advice for do-auto-fill to ignore certain envs.
+  See code at https://tex.stackexchange.com/a/69556/34063."
+  (and (eq major-mode 'LaTeX-mode)
+       (let ((do-auto-fill t)
+             (current-environment "")
+             (level 0))
+         (while (and do-auto-fill (not (string= current-environment "document")))
+           (setq level (1+ level)
+                 current-environment (LaTeX-current-environment level)
+                 do-auto-fill (not (member current-environment my-LaTeX-no-autofill-environments))))
+         do-auto-fill)))
+
+(advice-add 'do-auto-fill :before-while #'my-LaTeX-auto-fill-advice)
+
 (provide 'leo-lib)
