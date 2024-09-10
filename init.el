@@ -130,6 +130,9 @@
 ;; See https://github.com/d12frosted/homebrew-emacs-plus/issues/55
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . nil))
 
+;; Make ffap work for AUCTeX too
+(add-to-list 'ffap-alist '(LaTeX-mode . ffap-latex-mode))
+
 (load-theme 'zenburn)
 
 ;; Add my keybindings
