@@ -131,6 +131,7 @@
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . nil))
 
 ;; Make ffap work for AUCTeX too
+(require 'ffap)
 (add-to-list 'ffap-alist '(LaTeX-mode . ffap-latex-mode))
 
 (load-theme 'zenburn)
