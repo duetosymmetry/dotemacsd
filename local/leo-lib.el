@@ -55,4 +55,73 @@
               (char-equal (char-syntax cb) ?\) )
               (blink-matching-open))))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Make ffap work with my exercisepath thingy...
+;; This needs to be generalized with an AUCTeX hooking mechanism
+(require 'ffap)
+
+(defun ffap-latex-mode-with-exercisepath (name)
+  "`ffap' function suitable for latex buffers.
+This uses the program kpsewhich if available.  In this case, the
+variable `ffap-latex-guess-rules' is used for building a filename
+out of NAME.
+If the function `LaTeX-parse-addexercisepath' has been defined,
+it is called to parse extra path info from the buffer for searching."
+  (let ((extra-path (if (fboundp 'LaTeX-parse-addexercisepath)
+                        (LaTeX-parse-addexercisepath)
+                      '())))
+    (cond ((file-exists-p name)
+           name)
+          ((not (executable-find "kpsewhich"))
+           (ffap-tex-init)
+           (ffap-locate-file name '(".cls" ".sty" ".tex" "")
+                             (append extra-path ffap-tex-path)))
+          (t
+           (let ((curbuf (current-buffer))
+                 (guess-rules ffap-latex-guess-rules)
+                 (preferred-suffix-rules '(("input" . ".tex")
+                                           ("include" . ".tex")
+                                           ("usepackage" . ".sty")
+                                           ("RequirePackageWithOptions" . ".sty")
+                                           ("RequirePackage" . ".sty")
+                                           ("documentclass" . ".cls")
+                                           ("documentstyle" . ".cls")
+                                           ("LoadClass" . ".cls")
+                                           ("LoadClassWithOptions" . ".cls")
+                                           ("bibliography" . ".bib")
+                                           ("addbibresource" . ""))))
+             ;; We now add preferred suffix in front of suffixes.
+             (when
+                 ;; The condition is essentially:
+                 ;; (assoc (TeX-current-macro)
+                 ;;        (mapcar 'car preferred-suffix-rules))
+                 ;; but (TeX-current-macro) can take time, so we just
+                 ;; check if one of the `car' in preferred-suffix-rules
+                 ;; is found before point on the current line.  It
+                 ;; should cover most cases.
+                 (save-excursion
+                   (re-search-backward (regexp-opt
+                                        (mapcar 'car preferred-suffix-rules))
+                                       (line-beginning-position)
+                                       t))
+               (push (cons "" (cdr (assoc (match-string 0) ; i.e. "(TeX-current-macro)"
+                                          preferred-suffix-rules)))
+                     guess-rules))
+             (with-temp-buffer
+               (let ((process-environment (buffer-local-value
+                                            'process-environment curbuf))
+                      (exec-path (buffer-local-value 'exec-path curbuf))
+                      (extra-path-string (mapconcat 'identity extra-path ":"))
+                      (args (mapcar (lambda (rule)
+                                      (concat (car rule) name (cdr rule)))
+                                    guess-rules)))
+                 (apply #'call-process "kpsewhich" nil t nil args)
+                 (if (not (string= "" extra-path-string))
+                     (apply #'call-process "kpsewhich" nil t nil "-path" extra-path-string args)))
+               (when (< (point-min) (point-max))
+                 (buffer-substring (goto-char (point-min)) (line-end-position)))))))))
+
+(advice-add 'ffap-latex-mode :override #'ffap-latex-mode-with-exercisepath)
+
+
 (provide 'leo-lib)
