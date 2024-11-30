@@ -61,6 +61,14 @@
      (output-pdf "Skim")
      (output-html "open")))
  '(auth-sources '("~/.authinfo"))
+ '(bibtex-generate-url-list
+   '((("url" . ".*:.*"))
+     (("doi" . "10\\.[0-9]+/.+")
+      "https://doi.org/%s"
+      ("doi" ".*" 0))
+     (("eprint" . ".*")
+      "https://arxiv.org/abs/%s"
+      ("eprint" ".*" 0))))
  '(column-number-mode t)
  '(custom-enabled-themes '(zenburn))
  '(custom-safe-themes
