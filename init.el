@@ -141,6 +141,7 @@
 ;; Make ffap work for AUCTeX too
 (require 'ffap)
 (add-to-list 'ffap-alist '(LaTeX-mode . ffap-latex-mode))
+(add-to-list 'ffap-string-at-point-mode-alist '(LaTeX-mode "--:\\\\$+<>@-Z_[:alpha:]~*?" "<@" "@>;.,!:"))
 
 (load-theme 'zenburn)
 
