@@ -5,6 +5,7 @@
       '(
         LaTeX-insert-left-brace
         TeX-insert-backslash
+        TeX-insert-sub-or-superscript
         beginning-of-visual-line
         c-electric-paren
         c-electric-star

@@ -105,10 +105,11 @@
  '(package-archives
    '(("melpa-stable" . "https://stable.melpa.org/packages/")
      ("melpa" . "https://melpa.org/packages/")
-     ("org" . "https://orgmode.org/elpa/")
-     ("gnu" . "https://elpa.gnu.org/packages/")))
+     ("gnu" . "https://elpa.gnu.org/packages/")
+     ("elpa-devel" . "https://elpa.gnu.org/devel/")))
+ '(package-pinned-packages '((auctex . "elpa-devel")))
  '(package-selected-packages
-   '(dired-git-info git-commit cmake-mode expand-region treepy emacsql-sqlite emacsql tramp auctex magit company zenburn-theme yasnippet multiple-cursors which-key wc-mode nyan-mode unfill latex-extra bind-key lsp-mode lsp-pyright clang-format loccur julia-mode use-package lsp-ui forge diff-hl coffee-mode json-mode highlight-indent-guides pcre2el visual-regexp-steroids biblio smooth-scroll emoji-fontset browse-kill-ring company-c-headers company-shell company-web ggtags git-gutter-fringe markdown-mode+ tabbar scroll-restore))
+   '(marginalia vertico html-to-markdown dired-git-info git-commit cmake-mode expand-region treepy emacsql-sqlite emacsql tramp auctex magit company zenburn-theme yasnippet multiple-cursors which-key wc-mode nyan-mode unfill bind-key lsp-mode lsp-pyright clang-format loccur julia-mode use-package lsp-ui forge diff-hl coffee-mode json-mode highlight-indent-guides pcre2el visual-regexp-steroids biblio smooth-scroll emoji-fontset browse-kill-ring company-c-headers company-shell company-web ggtags git-gutter-fringe markdown-mode+ tabbar scroll-restore))
  '(reftex-plug-into-AUCTeX t)
  '(safe-local-variable-values '((TeX-PDF-mode . true)))
  '(savehist-mode t)
@@ -150,6 +151,10 @@
 
 ;; Use ido
 (ido-mode 1)
+
+;; Use vertico and marginalia for a better minibuffer experience
+(vertico-mode 1)
+(marginalia-mode 1)
 
 ;; Use default Apple font for emoji
 (emoji-fontset-enable "Apple Color Emoji")
