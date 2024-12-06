@@ -82,6 +82,7 @@
  '(display-line-numbers-type 'relative)
  '(epg-gpg-program "gpg")
  '(ffap-require-prefix t)
+ '(gc-cons-threshold 100000000)
  '(global-display-line-numbers-mode t)
  '(global-font-lock-mode t)
  '(global-visual-line-mode t)
@@ -109,9 +110,14 @@
      ("elpa-devel" . "https://elpa.gnu.org/devel/")))
  '(package-pinned-packages '((auctex . "elpa-devel")))
  '(package-selected-packages
-   '(marginalia vertico html-to-markdown dired-git-info git-commit cmake-mode expand-region treepy emacsql-sqlite emacsql tramp auctex magit company zenburn-theme yasnippet multiple-cursors which-key wc-mode nyan-mode unfill bind-key lsp-mode lsp-pyright clang-format loccur julia-mode use-package lsp-ui forge diff-hl coffee-mode json-mode highlight-indent-guides pcre2el visual-regexp-steroids biblio smooth-scroll emoji-fontset browse-kill-ring company-c-headers company-shell company-web ggtags git-gutter-fringe markdown-mode+ tabbar scroll-restore))
+   '(flycheck yaml-mode magit transient marginalia vertico html-to-markdown dired-git-info cmake-mode expand-region treepy emacsql-sqlite tramp company zenburn-theme yasnippet multiple-cursors which-key wc-mode nyan-mode unfill bind-key lsp-mode clang-format loccur julia-mode use-package lsp-ui diff-hl coffee-mode json-mode highlight-indent-guides pcre2el visual-regexp-steroids biblio smooth-scroll emoji-fontset browse-kill-ring company-c-headers company-shell company-web ggtags git-gutter-fringe markdown-mode+ tabbar scroll-restore))
  '(reftex-plug-into-AUCTeX t)
- '(safe-local-variable-values '((TeX-PDF-mode . true)))
+ '(safe-local-variable-values
+   '((etags-regen-ignores "test/manual/etags/")
+     (etags-regen-regexp-alist
+      (("c" "objc")
+       "/[ \11]*DEFVAR_[A-Z_ \11(]+\"\\([^\"]+\\)\"/\\1/" "/[ \11]*DEFVAR_[A-Z_ \11(]+\"[^\"]+\",[ \11]\\([A-Za-z0-9_]+\\)/\\1/"))
+     (TeX-PDF-mode . true)))
  '(savehist-mode t)
  '(show-paren-mode t)
  '(tab-width 2)
@@ -163,11 +169,10 @@
 (with-eval-after-load 'magit
   (require 'forge))
 
-(use-package lsp-pyright
-  :ensure t
-  :hook (python-mode . (lambda ()
-                          (require 'lsp-pyright)
-                          (lsp))))  ; or lsp-deferred
+;; Increase the amount of data which Emacs reads from the process. The emacs
+;; default is too low 4k considering that the some of the language server
+;; responses are in 800k - 3M range. Set to 1MB
+(setq read-process-output-max (* 1024 1024))
 
 ;; Always Be Serving
 (server-start)
