@@ -123,5 +123,14 @@ it is called to parse extra path info from the buffer for searching."
 
 (advice-add 'ffap-latex-mode :override #'ffap-latex-mode-with-exercisepath)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Tramp settings
+
+(connection-local-set-profile-variables
+ 'remote-path-mbot
+ '((tramp-remote-path . ("/opt/sxs/software/gcc-11.4.0/llvm/17.0.6/bin" tramp-default-remote-path))))
+
+(connection-local-set-profiles
+ '(:application tramp :machine "mbot") 'remote-path-mbot)
 
 (provide 'leo-lib)

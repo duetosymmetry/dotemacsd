@@ -82,7 +82,10 @@
  '(display-line-numbers-type 'relative)
  '(epg-gpg-program "gpg")
  '(ffap-require-prefix t)
+ '(fill-column 80)
+ '(frame-resize-pixelwise t)
  '(gc-cons-threshold 100000000)
+ '(global-display-fill-column-indicator-mode t)
  '(global-display-line-numbers-mode t)
  '(global-font-lock-mode t)
  '(global-visual-line-mode t)
@@ -94,6 +97,8 @@
  '(indent-tabs-mode nil)
  '(ispell-program-name "aspell")
  '(js-indent-level 2)
+ '(lsp-clients-clangd-args
+   '("--header-insertion-decorators=0" "-j=4" "--clang-tidy" "--fallback-style=google" "--enable-config" "--pch-storage=disk" "--rename-file-limit=0"))
  '(magit-diff-refine-hunk 'all)
  '(mouse-wheel-flip-direction t)
  '(mouse-wheel-scroll-amount '(2 ((shift) . 1) ((control))))
@@ -110,7 +115,7 @@
      ("elpa-devel" . "https://elpa.gnu.org/devel/")))
  '(package-pinned-packages '((auctex . "elpa-devel")))
  '(package-selected-packages
-   '(flycheck yaml-mode magit transient marginalia vertico html-to-markdown dired-git-info cmake-mode expand-region treepy emacsql-sqlite tramp company zenburn-theme yasnippet multiple-cursors which-key wc-mode nyan-mode unfill bind-key lsp-mode clang-format loccur julia-mode use-package lsp-ui diff-hl coffee-mode json-mode highlight-indent-guides pcre2el visual-regexp-steroids biblio smooth-scroll emoji-fontset browse-kill-ring company-c-headers company-shell company-web ggtags git-gutter-fringe markdown-mode+ tabbar scroll-restore))
+   '(google-c-style with-editor closql forge auctex keycast latex-extra magit magit-section flycheck yaml-mode transient marginalia vertico html-to-markdown dired-git-info cmake-mode expand-region treepy emacsql-sqlite tramp company zenburn-theme yasnippet multiple-cursors which-key wc-mode nyan-mode unfill bind-key lsp-mode clang-format loccur julia-mode use-package lsp-ui diff-hl coffee-mode json-mode highlight-indent-guides pcre2el visual-regexp-steroids biblio smooth-scroll emoji-fontset browse-kill-ring company-c-headers company-shell company-web ggtags git-gutter-fringe markdown-mode+ tabbar scroll-restore))
  '(reftex-plug-into-AUCTeX t)
  '(safe-local-variable-values
    '((etags-regen-ignores "test/manual/etags/")
@@ -164,6 +169,10 @@
 
 ;; Use default Apple font for emoji
 (emoji-fontset-enable "Apple Color Emoji")
+
+;; google-c-style
+(add-hook 'c-mode-common-hook 'google-set-c-style)
+(add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
 ;; Use forge when using magit
 (with-eval-after-load 'magit
