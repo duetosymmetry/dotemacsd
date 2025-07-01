@@ -133,4 +133,13 @@ it is called to parse extra path info from the buffer for searching."
 (connection-local-set-profiles
  '(:application tramp :machine "mbot") 'remote-path-mbot)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ANSI colorize buffer
+;; From https://stackoverflow.com/a/23382008/1695428
+
+(defun display-ansi-colors ()
+  (interactive)
+  (let ((inhibit-read-only t))
+    (ansi-color-apply-on-region (point-min) (point-max))))
+
 (provide 'leo-lib)
