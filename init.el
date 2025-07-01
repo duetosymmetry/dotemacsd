@@ -115,7 +115,7 @@
      ("elpa-devel" . "https://elpa.gnu.org/devel/")))
  '(package-pinned-packages '((auctex . "elpa-devel")))
  '(package-selected-packages
-   '(google-c-style with-editor closql forge auctex keycast latex-extra magit magit-section flycheck yaml-mode transient marginalia vertico html-to-markdown dired-git-info cmake-mode expand-region treepy emacsql-sqlite tramp company zenburn-theme yasnippet multiple-cursors which-key wc-mode nyan-mode unfill bind-key lsp-mode clang-format loccur julia-mode use-package lsp-ui diff-hl coffee-mode json-mode highlight-indent-guides pcre2el visual-regexp-steroids biblio smooth-scroll emoji-fontset browse-kill-ring company-c-headers company-shell company-web ggtags git-gutter-fringe markdown-mode+ tabbar scroll-restore))
+   '(projectile google-c-style with-editor closql forge auctex keycast latex-extra magit magit-section flycheck yaml-mode transient marginalia vertico html-to-markdown dired-git-info cmake-mode expand-region treepy emacsql-sqlite tramp company zenburn-theme yasnippet multiple-cursors which-key wc-mode nyan-mode unfill bind-key lsp-mode clang-format loccur julia-mode use-package lsp-ui diff-hl coffee-mode json-mode highlight-indent-guides pcre2el visual-regexp-steroids biblio smooth-scroll emoji-fontset browse-kill-ring company-c-headers company-shell company-web ggtags git-gutter-fringe markdown-mode+ tabbar scroll-restore))
  '(reftex-plug-into-AUCTeX t)
  '(safe-local-variable-values
    '((etags-regen-ignores "test/manual/etags/")
@@ -166,6 +166,13 @@
 ;; Use vertico and marginalia for a better minibuffer experience
 (vertico-mode 1)
 (marginalia-mode 1)
+
+;; Use projectile
+(require 'projectile)
+;; Recommended keymap prefix on macOS
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(projectile-mode +1)
+
 
 ;; Use default Apple font for emoji
 (emoji-fontset-enable "Apple Color Emoji")
