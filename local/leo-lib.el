@@ -115,9 +115,15 @@ it is called to parse extra path info from the buffer for searching."
                       (args (mapcar (lambda (rule)
                                       (concat (car rule) name (cdr rule)))
                                     guess-rules)))
-                 (apply #'call-process "kpsewhich" nil t nil args)
                  (if (not (string= "" extra-path-string))
-                     (apply #'call-process "kpsewhich" nil t nil "-path" extra-path-string args)))
+                     (apply #'call-process "kpsewhich" nil t nil "-path" extra-path-string args))
+                 (apply #'call-process "kpsewhich" nil t nil args)
+                 ;; get rid of any blank lines at the top of the temp buffer
+                 (goto-char (point-min))
+                 (delete-blank-lines)
+                 (delete-blank-lines)
+                 )
+               ;; grab the first line
                (when (< (point-min) (point-max))
                  (buffer-substring (goto-char (point-min)) (line-end-position)))))))))
 
