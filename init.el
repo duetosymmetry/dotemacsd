@@ -149,14 +149,27 @@
  '(warning-suppress-types '((comp)))
  '(wc-modeline-format "WC[%W%w=%twW; %C%c=%tcC]")
  '(which-key-mode t))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#3F3F3F" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "nil" :family "Hack"))))
- '(line-number ((t (:background "#383838" :foreground "#6F6F6F" :family "Hack"))))
- '(tab-bar ((t (:height 1.1 :foreground "black" :background "grey85" :inherit variable-pitch)))))
+;; (custom-set-faces
+;;  ;; custom-set-faces was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.
+;;  '(default ((t (:inherit nil :stipple nil :background "#3F3F3F" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "nil" :family "Hack"))))
+;;  '(line-number ((t (:background "#383838" :foreground "#6F6F6F" :family "Hack"))))
+;;  '(tab-bar ((t (:height 1.1 :foreground "black" :background "grey85" :inherit variable-pitch)))))
+
+;; ;; Use Menlo as a fallback in fontset-startup
+;; ;; before resorting to fontset-default.
+;; (set-fontset-font "fontset-startup" nil "Arial Unicode MS"
+;;                   nil 'append)
+
+;; (when (member "DejaVu Sans Mono" (font-family-list))
+;;   (add-to-list 'initial-frame-alist '(font . "DejaVu Sans Mono"))
+;;   (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono")))
+
+;; Use Symbola as default for unicode characters
+(when (member "Symbola" (font-family-list))
+  (set-fontset-font t 'unicode "Symbola" nil 'prepend))
 
 (require 'package)
 (package-initialize)
