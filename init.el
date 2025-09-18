@@ -47,7 +47,8 @@
  ;; If there is more than one, they won't work right.
  '(LaTeX-electric-left-right-brace t)
  '(LaTeX-mode-hook
-   '(LaTeX-math-mode turn-on-reftex turn-on-auto-fill latex-extra-mode flyspell-mode))
+   '(LaTeX-math-mode turn-on-reftex turn-on-auto-fill latex-extra-mode
+                     flyspell-mode))
  '(TeX-PDF-mode t)
  '(TeX-electric-escape t)
  '(TeX-electric-math '("$" . "$"))
@@ -57,22 +58,24 @@
  '(TeX-view-program-list
    '(("Skim" "/Applications/Skim.app/Contents/SharedSupport/displayline %n %o %b")))
  '(TeX-view-program-selection
-   '((output-dvi "open")
-     (output-pdf "Skim")
-     (output-html "open")))
+   '((output-dvi "open") (output-pdf "Skim") (output-html "open")))
  '(auth-sources '("~/.authinfo"))
  '(bibtex-generate-url-list
    '((("url" . ".*:.*"))
-     (("doi" . "10\\.[0-9]+/.+")
-      "https://doi.org/%s"
-      ("doi" ".*" 0))
-     (("eprint" . ".*")
-      "https://arxiv.org/abs/%s"
-      ("eprint" ".*" 0))))
+     (("doi" . "10\\.[0-9]+/.+") "https://doi.org/%s" ("doi" ".*" 0))
+     (("eprint" . ".*") "https://arxiv.org/abs/%s" ("eprint" ".*" 0))))
  '(column-number-mode t)
  '(custom-enabled-themes '(zenburn))
  '(custom-safe-themes
-   '("f366d4bc6d14dcac2963d45df51956b2409a15b770ec2f6d730e73ce0ca5c8a7" "816bacf37139d6204b761fea0d25f7f2f43b94affa14aa4598bce46157c160c2" "ec5f697561eaf87b1d3b087dd28e61a2fc9860e4c862ea8e6b0b77bd4967d0ba" "0c32e4f0789f567a560be625f239ee9ec651e524e46a4708eb4aba3b9cdc89c5" "190a9882bef28d7e944aa610aa68fe1ee34ecea6127239178c7ac848754992df" "e11569fd7e31321a33358ee4b232c2d3cf05caccd90f896e1df6cab228191109" "599f1561d84229e02807c952919cd9b0fbaa97ace123851df84806b067666332" "5e52ce58f51827619d27131be3e3936593c9c7f9f9f9d6b33227be6331bf9881" "67e998c3c23fe24ed0fb92b9de75011b92f35d3e89344157ae0d544d50a63a72" default))
+   '("f366d4bc6d14dcac2963d45df51956b2409a15b770ec2f6d730e73ce0ca5c8a7"
+     "816bacf37139d6204b761fea0d25f7f2f43b94affa14aa4598bce46157c160c2"
+     "ec5f697561eaf87b1d3b087dd28e61a2fc9860e4c862ea8e6b0b77bd4967d0ba"
+     "0c32e4f0789f567a560be625f239ee9ec651e524e46a4708eb4aba3b9cdc89c5"
+     "190a9882bef28d7e944aa610aa68fe1ee34ecea6127239178c7ac848754992df"
+     "e11569fd7e31321a33358ee4b232c2d3cf05caccd90f896e1df6cab228191109"
+     "599f1561d84229e02807c952919cd9b0fbaa97ace123851df84806b067666332"
+     "5e52ce58f51827619d27131be3e3936593c9c7f9f9f9d6b33227be6331bf9881"
+     "67e998c3c23fe24ed0fb92b9de75011b92f35d3e89344157ae0d544d50a63a72" default))
  '(desktop-restore-in-current-display nil)
  '(desktop-save-mode t)
  '(dgi-auto-hide-details-p nil)
@@ -98,15 +101,15 @@
  '(ispell-program-name "aspell")
  '(js-indent-level 2)
  '(lsp-clients-clangd-args
-   '("--header-insertion-decorators=0" "-j=4" "--clang-tidy" "--fallback-style=google" "--enable-config" "--pch-storage=disk" "--rename-file-limit=0"))
+   '("--header-insertion-decorators=0" "-j=4" "--clang-tidy"
+     "--fallback-style=google" "--enable-config" "--pch-storage=disk"
+     "--rename-file-limit=0"))
  '(magit-diff-refine-hunk 'all)
  '(mouse-wheel-flip-direction t)
  '(mouse-wheel-scroll-amount '(2 ((shift) . 1) ((control))))
  '(mouse-wheel-tilt-scroll t)
  '(org-capture-templates
-   '(("n" "Note" entry
-      (file "~/org/notes.org")
-      "* %T " :empty-lines 1)))
+   '(("n" "Note" entry (file "~/org/notes.org") "* %T " :empty-lines 1)))
  '(org-clock-sound t)
  '(package-archives
    '(("melpa-stable" . "https://stable.melpa.org/packages/")
@@ -115,13 +118,23 @@
      ("elpa-devel" . "https://elpa.gnu.org/devel/")))
  '(package-pinned-packages '((auctex . "elpa-devel")))
  '(package-selected-packages
-   '(projectile google-c-style with-editor closql forge auctex keycast latex-extra magit magit-section flycheck yaml-mode transient marginalia vertico html-to-markdown dired-git-info cmake-mode expand-region treepy emacsql-sqlite tramp company zenburn-theme yasnippet multiple-cursors which-key wc-mode nyan-mode unfill bind-key lsp-mode clang-format loccur julia-mode use-package lsp-ui diff-hl coffee-mode json-mode highlight-indent-guides pcre2el visual-regexp-steroids biblio smooth-scroll emoji-fontset browse-kill-ring company-c-headers company-shell company-web ggtags git-gutter-fringe markdown-mode+ tabbar scroll-restore))
+   '(auctex biblio bind-key browse-kill-ring clang-format closql cmake-mode
+            coffee-mode company company-c-headers company-shell company-web
+            compat diff-hl dired-git-info emacsql-sqlite emoji-fontset
+            expand-region flycheck forge ggtags ghub git-gutter-fringe
+            google-c-style highlight-indent-guides html-to-markdown json-mode
+            julia-mode keycast latex-extra llama loccur lsp-julia lsp-mode
+            lsp-ui magit magit-section marginalia markdown-mode+
+            multiple-cursors nyan-mode pcre2el projectile reveal-in-osx-finder
+            scroll-restore smooth-scroll tabbar tramp transient treepy unfill
+            use-package vertico visual-regexp-steroids wc-mode which-key
+            with-editor yaml-mode yasnippet zenburn-theme))
  '(reftex-plug-into-AUCTeX t)
  '(safe-local-variable-values
    '((etags-regen-ignores "test/manual/etags/")
      (etags-regen-regexp-alist
-      (("c" "objc")
-       "/[ \11]*DEFVAR_[A-Z_ \11(]+\"\\([^\"]+\\)\"/\\1/" "/[ \11]*DEFVAR_[A-Z_ \11(]+\"[^\"]+\",[ \11]\\([A-Za-z0-9_]+\\)/\\1/"))
+      (("c" "objc") "/[ \11]*DEFVAR_[A-Z_ \11(]+\"\\([^\"]+\\)\"/\\1/"
+       "/[ \11]*DEFVAR_[A-Z_ \11(]+\"[^\"]+\",[ \11]\\([A-Za-z0-9_]+\\)/\\1/"))
      (TeX-PDF-mode . true)))
  '(savehist-mode t)
  '(show-paren-mode t)
@@ -129,6 +142,7 @@
  '(text-scale-mode-step 1.1)
  '(tls-checktrust t)
  '(tool-bar-mode nil)
+ '(tramp-use-connection-share nil)
  '(tramp-use-ssh-controlmaster-options nil)
  '(truncate-lines t)
  '(visual-line-fringe-indicators '(left-curly-arrow right-curly-arrow))
@@ -180,6 +194,9 @@
 ;; google-c-style
 (add-hook 'c-mode-common-hook 'google-set-c-style)
 (add-hook 'c-mode-common-hook 'google-make-newline-indent)
+
+;; Needed for lsp-mode to know how to connect to an lsp using LanguageServer.jl
+(require 'lsp-julia)
 
 ;; Use forge when using magit
 (with-eval-after-load 'magit
