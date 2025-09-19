@@ -124,7 +124,7 @@
             expand-region flycheck forge ggtags ghub git-gutter-fringe
             google-c-style highlight-indent-guides html-to-markdown json-mode
             julia-mode keycast latex-extra llama loccur lsp-julia lsp-mode
-            lsp-ui magit magit-section marginalia markdown-mode+
+            lsp-pyright lsp-ui magit magit-section marginalia markdown-mode+
             multiple-cursors nyan-mode pcre2el projectile reveal-in-osx-finder
             scroll-restore smooth-scroll tabbar tramp transient treepy unfill
             use-package vertico visual-regexp-steroids wc-mode which-key
@@ -154,7 +154,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "MenloPatched" :foundry "nil" :slant normal :weight regular :height 120 :width normal)))))
+ '(default ((t (:family "JuliaMono" :foundry "nil" :slant normal :weight regular :height 120 :width normal)))))
 
 ;; ;; Use Menlo as a fallback in fontset-startup
 ;; ;; before resorting to fontset-default.
