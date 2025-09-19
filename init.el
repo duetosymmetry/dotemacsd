@@ -165,9 +165,9 @@
 ;;   (add-to-list 'initial-frame-alist '(font . "DejaVu Sans Mono"))
 ;;   (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono")))
 
-;; Use Symbola as default for unicode characters
-(when (member "Symbola" (font-family-list))
-  (set-fontset-font t 'unicode "Symbola" nil 'prepend))
+;; ;; Use Symbola as default for unicode characters
+;; (when (member "Symbola" (font-family-list))
+;;   (set-fontset-font t 'unicode "Symbola" nil 'prepend))
 
 (require 'package)
 (package-initialize)
