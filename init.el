@@ -209,6 +209,11 @@
 ;; Needed for lsp-mode to know how to connect to an lsp using LanguageServer.jl
 (require 'lsp-julia)
 
+;; Enable lsp for a few modes
+(require 'lsp-mode)
+(add-hook 'julia-mode-hook #'lsp)
+(add-hook 'python-mode-hook #'lsp)
+
 ;; Use forge when using magit
 (with-eval-after-load 'magit
   (require 'forge))
