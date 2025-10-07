@@ -36,3 +36,12 @@
     '(progn
        (define-key flyspell-mouse-map [down-mouse-3] #'flyspell-correct-word)
        (define-key flyspell-mouse-map [mouse-3] #'undefined)))
+
+;; After TeX input method is first loaded, add
+;; \vec to insert COMBINING RIGHT ARROW ABOVE
+;; See https://www.emacswiki.org/emacs/TeXInputMethod
+(with-eval-after-load "quail/latin-ltx"
+  (with-temp-buffer
+    (quail-select-package "TeX")
+    (quail-define-rules ((append . t))
+     ("\\vec" ?⃗))))
