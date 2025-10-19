@@ -125,10 +125,13 @@
             google-c-style highlight-indent-guides html-to-markdown json-mode
             julia-mode keycast latex-extra llama loccur lsp-julia lsp-mode
             lsp-pyright lsp-ui magit magit-section marginalia markdown-mode+
-            multiple-cursors nyan-mode pcre2el projectile reveal-in-osx-finder
-            scroll-restore smooth-scroll tabbar tramp transient treepy unfill
-            use-package vertico visual-regexp-steroids wc-mode which-key
-            with-editor yaml-mode yasnippet zenburn-theme))
+            multiple-cursors nyan-mode orderless pcre2el projectile
+            reveal-in-osx-finder scroll-restore smooth-scroll tabbar time-zones
+            tramp transient transpose-frame treepy unfill vertico
+            visual-regexp-steroids wc-mode which-key with-editor yaml-mode
+            yasnippet zenburn-theme))
+ '(package-vc-selected-packages
+   '((time-zones :url "https://github.com/xenodium/time-zones")))
  '(reftex-plug-into-AUCTeX t)
  '(safe-local-variable-values
    '((etags-regen-ignores "test/manual/etags/")
@@ -222,6 +225,17 @@
 ;; default is too low 4k considering that the some of the language server
 ;; responses are in 800k - 3M range. Set to 1MB
 (setq read-process-output-max (* 1024 1024))
+
+(use-package time-zones
+  :vc (:url "https://github.com/xenodium/time-zones"))
+
+;; from the README at https://github.com/oantolin/orderless
+(use-package orderless
+  :ensure t
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-overrides '((file (styles partial-completion))))
+  (completion-pcm-leading-wildcard t)) ;; Emacs 31: partial-completion behaves like substring
 
 ;; Always Be Serving
 (server-start)
