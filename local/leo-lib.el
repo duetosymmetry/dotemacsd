@@ -148,4 +148,27 @@ it is called to parse extra path info from the buffer for searching."
   (let ((inhibit-read-only t))
     (ansi-color-apply-on-region (point-min) (point-max))))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; For opening arXiv:identifier via browse-url, adding https://... in front
+(defun browse-arXiv (url &optional args)
+  "Open an arXiv paper using browse-url.
+
+URL should be of the form \"arXiv:identifier\".
+Extracts the identifier, constructs a URL of the form
+\"https://arxiv.org/abs/identifier\", and calls
+`browse-url' with that URL and optional ARGS."
+  (interactive "sArXiv identifier (e.g., arXiv:2208.07380): ")
+  (unless (called-interactively-p 'interactive)
+    (setq args (or args (list browse-url-new-window-flag))))
+  (if (string-match "^[Aa][Rr][Xx][Ii][Vv]:\\(.+\\)$" url)
+      (let* ((identifier (match-string 1 url))
+             (abs-url (format "https://arxiv.org/abs/%s" identifier)))
+        (browse-url abs-url args))
+    (browse-url url args)))
+
+;; add arxiv: and arXiv: as "URLs" that can be buttonized
+(setq
+ browse-url-button-regexp
+ (replace-regexp-in-string "gopher" "ar[Xx]iv\\\\|gopher" browse-url-button-regexp))
+
 (provide 'leo-lib)

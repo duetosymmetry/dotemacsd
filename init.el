@@ -64,6 +64,8 @@
    '((("url" . ".*:.*"))
      (("doi" . "10\\.[0-9]+/.+") "https://doi.org/%s" ("doi" ".*" 0))
      (("eprint" . ".*") "https://arxiv.org/abs/%s" ("eprint" ".*" 0))))
+ '(browse-url-handlers
+   '(("[Aa][Rr][Xx][Ii][Vv]:[a-zA-Z0-9./-]+" . browse-arXiv)))
  '(column-number-mode t)
  '(custom-enabled-themes '(zenburn))
  '(custom-safe-themes
@@ -120,7 +122,7 @@
  '(package-selected-packages
    '(auctex biblio bind-key browse-kill-ring clang-format closql cmake-mode
             coffee-mode company company-c-headers company-shell company-web
-            compat diff-hl dired-git-info emacsql-sqlite emoji-fontset
+            compat corfu diff-hl dired-git-info emacsql-sqlite emoji-fontset
             expand-region flycheck forge ggtags ghub git-gutter-fringe
             google-c-style highlight-indent-guides html-to-markdown json-mode
             julia-mode keycast latex-extra llama loccur lsp-julia lsp-mode
@@ -227,13 +229,13 @@
 (setq read-process-output-max (* 1024 1024))
 
 (use-package time-zones
-  :vc (:url "https://github.com/xenodium/time-zones"))
+  :vc (:url "git@github.com:xenodium/time-zones.git"))
 
 ;; from the README at https://github.com/oantolin/orderless
 (use-package orderless
   :ensure t
   :custom
-  (completion-styles '(orderless basic))
+  (completion-styles '(orderless basic partial-completion))
   (completion-category-overrides '((file (styles partial-completion))))
   (completion-pcm-leading-wildcard t)) ;; Emacs 31: partial-completion behaves like substring
 
