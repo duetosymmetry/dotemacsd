@@ -121,16 +121,16 @@
  '(package-selected-packages
    '(auctex biblio bind-key browse-kill-ring clang-format closql cmake-mode
             coffee-mode company company-c-headers company-shell company-web
-            compat consult corfu diff-hl dired-git-info eldoc-box emacsql-sqlite
+            compat cond-let consult corfu diff-hl dired-git-info eldoc-box
             emoji-fontset expand-region flycheck forge ggtags ghub
             git-gutter-fringe google-c-style highlight-indent-guides
-            html-to-markdown json-mode julia-mode keycast latex-extra llama
-            loccur lsp-julia lsp-mode lsp-pyright lsp-ui magit magit-section
-            marginalia markdown-mode+ multiple-cursors nyan-mode orderless
-            pcre2el projectile reveal-in-osx-finder scroll-restore smooth-scroll
-            tabbar time-zones tramp transient transpose-frame treepy unfill
-            vertico visual-regexp-steroids wc-mode which-key with-editor
-            yaml-mode yasnippet zenburn-theme))
+            html-to-markdown indent-bars json-mode julia-mode keycast
+            latex-extra llama loccur lsp-julia lsp-mode lsp-pyright lsp-ui magit
+            magit-section marginalia markdown-mode markdown-mode+
+            multiple-cursors nyan-mode orderless pcre2el projectile
+            reveal-in-osx-finder scroll-restore smooth-scroll tabbar time-zones
+            tramp transpose-frame treepy unfill vertico visual-regexp-steroids
+            wc-mode which-key with-editor yaml yaml-mode yasnippet zenburn-theme))
  '(package-vc-selected-packages
    '((time-zones :url "https://github.com/xenodium/time-zones")))
  '(reftex-plug-into-AUCTeX t)
@@ -196,7 +196,7 @@
 
 ;; from the README at https://github.com/minad/vertico
 (use-package vertico
-  :custom
+  ;; :custom
   ;; (vertico-scroll-margin 0) ;; Different scroll margin
   ;; (vertico-count 20) ;; Show more candidates
   ;; (vertico-resize t) ;; Grow and shrink the Vertico minibuffer
@@ -243,6 +243,15 @@
 (add-hook 'julia-mode-hook #'lsp)
 (add-hook 'python-mode-hook #'lsp)
 
+(use-package indent-bars
+  :hook ((python-mode
+          yaml-mode
+          emacs-lisp-mode
+          lisp-interaction-mode
+          julia-mode
+          c-mode-common)
+         . indent-bars-mode))
+
 ;; Use forge when using magit
 (with-eval-after-load 'magit
   (require 'forge))
@@ -276,7 +285,7 @@
 
   ;; Enable Corfu only for certain modes. See also `global-corfu-modes'.
   :hook ((emacs-lisp-mode . corfu-mode)
-         (list-interaction-mode . corfu-mode))
+         (lisp-interaction-mode . corfu-mode))
 
   :init
 
