@@ -133,6 +133,7 @@
             wc-mode which-key with-editor yaml yaml-mode yasnippet zenburn-theme))
  '(package-vc-selected-packages
    '((time-zones :url "https://github.com/xenodium/time-zones")))
+ '(reftex-cite-key-separator ", ")
  '(reftex-plug-into-AUCTeX t)
  '(safe-local-variable-values
    '((etags-regen-ignores "test/manual/etags/")
