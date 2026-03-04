@@ -171,4 +171,11 @@ Extracts the identifier, constructs a URL of the form
  browse-url-button-regexp
  (replace-regexp-in-string "gopher" "ar[Xx]iv\\\\|gopher" browse-url-button-regexp))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Open an iTerm "here"
+;; From https://www.reddit.com/r/emacs/comments/27xoo5/open_current_directory_in_iterm2_from_emacs/
+(defun iterm-here ()
+  (interactive)
+  (dired-smart-shell-command "open -a iTerm $PWD" nil nil))
+
 (provide 'leo-lib)
