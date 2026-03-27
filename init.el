@@ -135,6 +135,8 @@
    '((time-zones :url "https://github.com/xenodium/time-zones")))
  '(reftex-cite-key-separator ", ")
  '(reftex-plug-into-AUCTeX t)
+ '(remote-file-name-inhibit-auto-save t)
+ '(remote-file-name-inhibit-locks t)
  '(safe-local-variable-values
    '((etags-regen-ignores "test/manual/etags/")
      (etags-regen-regexp-alist
@@ -147,7 +149,9 @@
  '(text-scale-mode-step 1.1)
  '(tls-checktrust t)
  '(tool-bar-mode nil)
+ '(tramp-copy-size-limit 1049600)
  '(tramp-use-connection-share nil)
+ '(tramp-use-scp-direct-remote-copying t)
  '(tramp-use-ssh-controlmaster-options nil)
  '(truncate-lines t)
  '(visual-line-fringe-indicators '(left-curly-arrow right-curly-arrow))
