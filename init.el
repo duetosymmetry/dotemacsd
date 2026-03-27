@@ -129,10 +129,13 @@
             magit-section marginalia markdown-mode markdown-mode+
             multiple-cursors nyan-mode orderless pcre2el projectile
             reveal-in-osx-finder scroll-restore smooth-scroll tabbar time-zones
-            tramp transpose-frame treepy unfill vertico visual-regexp-steroids
-            wc-mode which-key with-editor yaml yaml-mode yasnippet zenburn-theme))
+            tramp tramp-rpc transpose-frame treepy unfill vertico
+            visual-regexp-steroids wc-mode which-key with-editor yaml yaml-mode
+            yasnippet zenburn-theme))
  '(package-vc-selected-packages
-   '((time-zones :url "https://github.com/xenodium/time-zones")))
+   '((tramp-rpc :url "https://github.com/ArthurHeymans/emacs-tramp-rpc" :lisp-dir
+                "lisp")
+     (time-zones :url "https://github.com/xenodium/time-zones")))
  '(reftex-cite-key-separator ", ")
  '(reftex-plug-into-AUCTeX t)
  '(remote-file-name-inhibit-auto-save t)
@@ -303,6 +306,12 @@
   ;; (corfu-history-mode)
   ;; (corfu-popupinfo-mode)
   )
+
+(use-package tramp-rpc
+  :after tramp
+  :vc (:url "https://github.com/ArthurHeymans/emacs-tramp-rpc"
+       :rev :newest
+       :lisp-dir "lisp"))
 
 ;; Always Be Serving
 (server-start)
