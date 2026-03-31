@@ -176,6 +176,6 @@ Extracts the identifier, constructs a URL of the form
 ;; From https://www.reddit.com/r/emacs/comments/27xoo5/open_current_directory_in_iterm2_from_emacs/
 (defun iterm-here ()
   (interactive)
-  (dired-smart-shell-command "open -a iTerm $PWD" nil nil))
+  (dired-smart-shell-command "open -a iTerm \"$PWD\"" nil nil))
 
 (provide 'leo-lib)
