@@ -103,8 +103,7 @@
  '(js-indent-level 2)
  '(lsp-clients-clangd-args
    '("--header-insertion-decorators=0" "-j=4" "--clang-tidy"
-     "--fallback-style=google" "--enable-config" "--pch-storage=disk"
-     "--rename-file-limit=0"))
+     "--fallback-style=google" "--enable-config" "--pch-storage=disk"))
  '(magit-diff-refine-hunk 'all)
  '(mouse-wheel-flip-direction t)
  '(mouse-wheel-scroll-amount '(2 ((shift) . 1) ((control))))
@@ -119,19 +118,22 @@
      ("elpa-devel" . "https://elpa.gnu.org/devel/")))
  '(package-pinned-packages '((auctex . "elpa-devel")))
  '(package-selected-packages
-   '(auctex biblio bind-key browse-kill-ring clang-format closql cmake-mode
-            coffee-mode company company-c-headers company-shell company-web
-            compat cond-let consult corfu diff-hl dired-git-info eldoc-box
-            emoji-fontset expand-region flycheck forge ggtags ghub
-            git-gutter-fringe google-c-style highlight-indent-guides
-            html-to-markdown indent-bars json-mode julia-mode keycast
-            latex-extra llama loccur lsp-julia lsp-mode lsp-pyright lsp-ui magit
-            magit-section marginalia markdown-mode markdown-mode+
-            multiple-cursors nyan-mode orderless pcre2el projectile
-            reveal-in-osx-finder scroll-restore smooth-scroll tabbar time-zones
-            tramp tramp-rpc transpose-frame treepy unfill vertico
-            visual-regexp-steroids wc-mode which-key with-editor yaml yaml-mode
-            yasnippet zenburn-theme))
+   '(apple-container-tramp auctex biblio bind-key browse-kill-ring clang-format
+                           closql cmake-mode coffee-mode company
+                           company-c-headers company-shell company-web compat
+                           cond-let consult corfu diff-hl dired-git-info
+                           eldoc-box emoji-fontset expand-region flycheck forge
+                           ggtags ghub git-gutter-fringe google-c-style
+                           highlight-indent-guides html-to-markdown indent-bars
+                           json-mode julia-mode keycast latex-extra let-alist
+                           llama loccur lsp-julia lsp-mode lsp-pyright lsp-ui
+                           magit magit-section marginalia markdown-mode
+                           markdown-mode+ multiple-cursors nyan-mode orderless
+                           pcre2el projectile reveal-in-osx-finder
+                           scroll-restore smooth-scroll tabbar time-zones tramp
+                           tramp-rpc transient transpose-frame treepy unfill
+                           vertico visual-regexp-steroids wc-mode which-key
+                           with-editor yaml yaml-mode yasnippet zenburn-theme))
  '(package-vc-selected-packages
    '((tramp-rpc :url "https://github.com/ArthurHeymans/emacs-tramp-rpc" :lisp-dir
                 "lisp")
@@ -312,6 +314,9 @@
   :vc (:url "https://github.com/ArthurHeymans/emacs-tramp-rpc"
        :rev :newest
        :lisp-dir "lisp"))
+
+(use-package apple-container-tramp
+  :after tramp)
 
 ;; Always Be Serving
 (server-start)
