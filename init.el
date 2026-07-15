@@ -126,6 +126,9 @@
  '(mouse-wheel-flip-direction t)
  '(mouse-wheel-scroll-amount '(2 ((shift) . 1) ((control))))
  '(mouse-wheel-tilt-scroll t)
+ '(org-agenda-files
+   '("~/org/todo.org"
+     "/Users/leo/Documents/conferences-seminars/2026-2027 Fall Colloquium series/colloq.org"))
  '(org-capture-templates
    '(("n" "Note" entry (file "~/org/notes.org") "* %T " :empty-lines 1)))
  '(org-clock-sound t)
