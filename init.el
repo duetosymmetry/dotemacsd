@@ -173,6 +173,7 @@
  '(tls-checktrust t)
  '(tool-bar-mode nil)
  '(tramp-copy-size-limit 1049600)
+ '(tramp-rpc-deploy-git-build-policy 'release)
  '(tramp-use-connection-share nil)
  '(tramp-use-scp-direct-remote-copying t)
  '(tramp-use-ssh-controlmaster-options nil)
