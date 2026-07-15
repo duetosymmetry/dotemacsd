@@ -139,6 +139,13 @@ it is called to parse extra path info from the buffer for searching."
 (connection-local-set-profiles
  '(:application tramp :machine "mbot") 'remote-path-mbot)
 
+(connection-local-set-profile-variables
+ 'remote-path-caltechHPC
+ '((tramp-remote-path . ("/home/leo/miniconda3/bin" tramp-default-remote-path))))
+
+(connection-local-set-profiles
+ '(:application tramp :machine "caltechHPC") 'remote-path-caltechHPC)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ANSI colorize buffer
 ;; From https://stackoverflow.com/a/23382008/1695428
