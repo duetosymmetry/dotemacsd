@@ -84,6 +84,24 @@
  '(diredp-hide-details-initially-flag nil)
  '(display-line-numbers 'visual)
  '(display-line-numbers-type 'relative)
+ '(elfeed-feeds
+   '("http://sachachua.com/blog/category/emacs-news/feed/"
+     "http://www.npr.org/rss/rss.php?id=92071316"
+     "http://www.phy.olemiss.edu/~berti/feed.xml" "http://asymptotia.com/feed/"
+     "http://feeds.aps.org/rss/tocsec/PRL-GravitationandAstrophysics.xml"
+     "https://www.black-holes.org/feed.xml" "http://aperiodical.com/feed/"
+     "http://hyperspace.uni-frankfurt.de/feed/"
+     "http://feeds.aps.org/rss/prdsuggestions.xml"
+     "https://www.quantamagazine.org/category/abstractions/feed/"
+     "https://terrytao.wordpress.com/feed/" "http://cqgplus.com/feed/"
+     "http://seancarroll.libsyn.com/rss"
+     "https://www.theorygirls.com/blog-feed.xml"
+     "http://www.physicsmatt.com/blog?format=RSS"
+     "http://johncarlosbaez.wordpress.com/feed/"
+     "http://feeds.aps.org/rss/recent/physics.xml"
+     "http://apod.nasa.gov/apod.rss" "http://duetosymmetry.com/feed.xml"
+     "http://tragedyseries.tumblr.com/rss" "http://pbfcomics.com/feed/feed.xml"
+     "https://sachachua.com/blog/category/emacs-news/feed/atom/"))
  '(epg-gpg-program "gpg")
  '(ffap-require-prefix t)
  '(fill-column 80)
@@ -122,8 +140,8 @@
                            closql cmake-mode coffee-mode company
                            company-c-headers company-shell company-web compat
                            cond-let consult corfu diff-hl dired-git-info
-                           eldoc-box emoji-fontset expand-region flycheck forge
-                           ggtags ghub git-gutter-fringe google-c-style
+                           eldoc-box elfeed emoji-fontset expand-region flycheck
+                           forge ggtags ghub git-gutter-fringe google-c-style
                            highlight-indent-guides html-to-markdown indent-bars
                            json-mode julia-mode keycast latex-extra let-alist
                            llama loccur lsp-julia lsp-mode lsp-pyright lsp-ui
