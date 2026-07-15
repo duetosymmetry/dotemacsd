@@ -272,6 +272,13 @@
 
 ;; Enable lsp for a few modes
 (require 'lsp-mode)
+
+;; LanguageServer.jl apparently doesn't understand documentColor... disable just
+;; for julia-mode
+(add-hook 'julia-mode-hook
+          (lambda ()
+            (setq-local lsp-enable-text-document-color nil)))
+
 (add-hook 'julia-mode-hook #'lsp)
 (add-hook 'python-mode-hook #'lsp)
 
