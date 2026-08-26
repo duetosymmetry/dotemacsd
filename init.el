@@ -344,6 +344,11 @@
        :rev :newest
        :lisp-dir "lisp"))
 
+
+(use-package unfill
+  :vc (:url "https://github.com/purcell/unfill"
+       :rev :newest))
+
 (use-package apple-container-tramp
   :after tramp)
 
