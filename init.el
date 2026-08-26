@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 ;; append to load path
 ;; (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/local/")

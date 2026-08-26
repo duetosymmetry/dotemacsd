@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 ;; This comes from https://github.com/magnars/.emacs.d/blob/master/key-bindings.el
 ;; I don't need to kill emacs that easily
 ;; the mnemonic is C-x REALLY QUIT
