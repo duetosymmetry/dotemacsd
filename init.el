@@ -261,7 +261,7 @@
 
 
 ;; Use default Apple font for emoji
-(emoji-fontset-enable "Apple Color Emoji")
+(set-fontset-font t 'emoji (font-spec :family "Apple Color Emoji") nil 'prepend)
 
 ;; google-c-style
 (add-hook 'c-mode-common-hook 'google-set-c-style)
